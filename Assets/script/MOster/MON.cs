@@ -1,0 +1,92 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public class MON : MonoBehaviour
+{
+    public float HP = 2000;
+    public float ATK = 300;
+    public float Defense = 60;
+    public float LIFESTEAL = 5;
+    public float Crit_Rate = 10;
+    public float Crit_DMG = 50;
+    public float Weakness_Reveal = 10;
+    public float Exploit_DMG = 70;
+    public float Speed = 60;
+
+    public bool IsPlay = false;
+    public bool IsRANDOM = false;
+
+    GameController gameController ;
+
+    public List<Units> units  = new List<Units>();
+    public Transform _TargetWalkMONster;
+
+    public WalkMONster _Walk;
+
+    public int INDEX_TO_RANDOM;
+    public int INDEX_TO_ATTACK;
+    // Start is called before the first frame update
+    void Start()
+    {
+        gameController = FindObjectOfType<GameController>();
+        units = FindObjectsOfType<Units>().ToList();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (IsPlay == true)
+        {
+            INDEX_TO_RANDOM = units.Count;
+            IsRANDOM =true;
+            if (IsRANDOM == true)
+            { 
+            INDEX_TO_ATTACK = UnityEngine.Random.Range(0, INDEX_TO_RANDOM);
+                IsRANDOM = false;
+            }
+            _TargetWalkMONster = units[INDEX_TO_ATTACK].transform;
+            _Walk.GetenemyTarget(_TargetWalkMONster);
+           
+            StartCoroutine(w8(1));
+           
+        
+        }
+        if (HP == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    IEnumerator w8(int _W8 )
+    {
+        IsPlay = false;
+        _Walk.TakeAction();
+        yield return new WaitForSeconds(_W8);
+        _Walk.Retrun();
+        gameController.NextTurn();
+        gameController._Turn();
+       
+    }
+    public void _IsPlayMON(bool isPlay)
+    {
+        IsPlay = isPlay;
+
+    }
+
+
+    public void UpdateMonsterHp(float MON_GETDAMAG)
+    {
+        HP = HP- MON_GETDAMAG;
+        print("Monster-Hp" + gameObject.name);
+    }
+    public void OnMouseDown()
+    {
+        print(" _touch " + transform);
+
+        gameController.Get_touchEnemy(transform);
+
+
+
+    }
+}
