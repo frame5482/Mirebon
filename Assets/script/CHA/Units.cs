@@ -26,7 +26,12 @@ public class Units : MonoBehaviour
     public float Crit_DMG = 50;
     public float Weakness_Reveal = 10;
     public float Weakness_DMG = 70;
-    public float Speed = 60;
+
+
+    public float ATB = 50;
+
+    public float Speed = 30;
+
 
 
     public bool IsPlay = false;
@@ -68,7 +73,7 @@ public class Units : MonoBehaviour
         alliance = FindObjectsOfType<Units>().ToList();
         Enemy = FindObjectsOfType<MON>().ToList();
 
-       
+
 
 
 
@@ -78,26 +83,27 @@ public class Units : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (IsPlay == true)
         {
             Player_To_Ui();
-            if (Input.GetKeyDown(KeyCode.Q) )
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 GETKEY_Q();
             }
-            if (Input.GetKeyDown(KeyCode.W) )
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 GETKEK_W();
             }
 
-            if (Input.GetKeyDown(KeyCode.E) )
+            if (Input.GetKeyDown(KeyCode.E))
             {
 
                 GETKEK_E();
             }
 
 
-            if (Input.GetKeyDown(KeyCode.R) )
+            if (Input.GetKeyDown(KeyCode.R))
             {
                 GETKEY_R_EX();
             }
@@ -113,42 +119,48 @@ public class Units : MonoBehaviour
 
         }
 
-        if(HP == 0)
+        if (HP == 0)
         {
             Destroy(gameObject);
         }
+        if (ATB <= 0)
+        {
+            ATB = 0;
+        }
+
+
     }
 
     public void GETKEY_Q()
     {
-         if (isConfirmingQ == false && isOrtherConfirming == false)
+        if (isConfirmingQ == false && isOrtherConfirming == false)
+        {
+            _Curser.SetActive(true);
+            if (_ATTACK.OnAttack == false)
             {
-                      _Curser.SetActive(true);
-                   if (_ATTACK.OnAttack == false)
-                   { 
-                    _IsBuff(Skill_Q_IS_BUFF);
-                   isConfirmingQ = true;
-                    isOrtherConfirming = true;
-                    print("isConfirming");
-                    }
+                _IsBuff(Skill_Q_IS_BUFF);
+                isConfirmingQ = true;
+                isOrtherConfirming = true;
+                print("isConfirming");
+            }
 
-                   }
+        }
 
-                  else if (isConfirmingQ == true)
-                   {
-                        if (_ATTACK.OnAttack == false)
-                     {
-                      print("Skill_1");
+        else if (isConfirmingQ == true)
+        {
+            if (_ATTACK.OnAttack == false)
+            {
+                print("Skill_1");
                 if (Skill_Q_IS_BUFF == false) { walk.TakeAction(); }
                 playanime.SetTrigger("Skill_1");
-                      cancer();
-                       }
-                   }
+                cancer();
+            }
+        }
     }
 
     public void GETKEK_W()
     {
-        if ( isConfirmingW == false && isOrtherConfirming == false)
+        if (isConfirmingW == false && isOrtherConfirming == false)
         {
             _Curser.SetActive(true);
             if (_ATTACK.OnAttack == false)
@@ -189,7 +201,7 @@ public class Units : MonoBehaviour
             }
 
         }
-        else if ( isConfirmingE == true)
+        else if (isConfirmingE == true)
         {
             if (_ATTACK.OnAttack == false)
             {
@@ -223,14 +235,14 @@ public class Units : MonoBehaviour
             if (_ATTACK.OnAttack == false)
             {
                 print("EX");
-                if(Skill_EX_IS_BUFF == false) { walk.TakeAction(); }
-               
+                if (Skill_EX_IS_BUFF == false) { walk.TakeAction(); }
+
                 playanime.SetTrigger("EX");
                 cancer();
             }
         }
 
-      
+
 
     }
 
@@ -245,7 +257,7 @@ public class Units : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        print(" _touch "+ transform);
+        print(" _touch " + transform);
 
         gameController.Get_touchUnits(transform);
 
@@ -275,5 +287,18 @@ public class Units : MonoBehaviour
 
     }
 
-   
+
+    public void ATBpaly()
+    {
+        ATB += Speed;
+
+
+    }
+
+    public void GetHit(float Damage)
+
+    {
+        HP -= Damage;
+    }
+
 }

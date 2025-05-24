@@ -13,7 +13,12 @@ public class MON : MonoBehaviour
     public float Crit_DMG = 50;
     public float Weakness_Reveal = 10;
     public float Exploit_DMG = 70;
+
+
     public float Speed = 60;
+    public float MaxATB = 100;
+    public float ATB = 50;
+
 
     public bool IsPlay = false;
     public bool IsRANDOM = false;
@@ -27,6 +32,13 @@ public class MON : MonoBehaviour
 
     public int INDEX_TO_RANDOM;
     public int INDEX_TO_ATTACK;
+     
+
+    public bool isActing = false;
+
+
+
+    public FlashOnHit flashOnHit;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,22 +49,14 @@ public class MON : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsPlay == true)
+        if (IsPlay == true && isActing == false )
         {
-            INDEX_TO_RANDOM = units.Count;
-            IsRANDOM =true;
-            if (IsRANDOM == true)
-            { 
-            INDEX_TO_ATTACK = UnityEngine.Random.Range(0, INDEX_TO_RANDOM);
-                IsRANDOM = false;
-            }
-            _TargetWalkMONster = units[INDEX_TO_ATTACK].transform;
-            _Walk.GetenemyTarget(_TargetWalkMONster);
            
             StartCoroutine(w8(1));
-           
-        
+
         }
+
+
         if (HP == 0)
         {
             Destroy(gameObject);
@@ -60,23 +64,45 @@ public class MON : MonoBehaviour
     }
     IEnumerator w8(int _W8 )
     {
-        IsPlay = false;
+        isActing = true;
+
+        yield return new WaitForSeconds(1);
+
+        Rendom();
+
         _Walk.TakeAction();
-        yield return new WaitForSeconds(_W8);
+
+        yield return new WaitForSeconds(1);
+        Attack();
         _Walk.Retrun();
+      
         gameController.NextTurn();
-        gameController._Turn();
-       
+        ATB = 0;
+        IsPlay = false;
+        isActing = false;
+
+        // gameController._Turn();
+
+    }
+    public void Rendom()
+    {
+        INDEX_TO_RANDOM = units.Count;
+        INDEX_TO_ATTACK = UnityEngine.Random.Range(0, INDEX_TO_RANDOM);
+
+        _TargetWalkMONster = units[INDEX_TO_ATTACK].transform;
+        _Walk.GetenemyTarget(_TargetWalkMONster);
     }
     public void _IsPlayMON(bool isPlay)
     {
+        if (IsPlay == isPlay) return;
         IsPlay = isPlay;
-
+       
     }
 
 
     public void UpdateMonsterHp(float MON_GETDAMAG)
     {
+        flashOnHit.Flash();
         HP = HP- MON_GETDAMAG;
         print("Monster-Hp" + gameObject.name);
     }
@@ -89,4 +115,19 @@ public class MON : MonoBehaviour
 
 
     }
+
+
+    public void ATBpaly()
+    {
+        ATB += Speed;
+
+
+    }
+
+    public void Attack()
+    {
+
+        units[INDEX_TO_ATTACK].GetHit(ATK);
+    }
+
 }

@@ -23,40 +23,44 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        allUnits = FindObjectsOfType<Units>().ToList();
-        Allmon = FindObjectsOfType<MON>().ToList();
-        var combinedList = allUnits.Cast<object>()
-                                     .Concat(Allmon)
-                                     .OrderByDescending(obj => (obj is Units unit) ? unit.Speed : ((MON)obj).Speed)
-                                     .Select(obj => (obj is Units unit) ? unit.gameObject : ((MON)obj).gameObject)
-                                     .ToList();
-        Alltrun = combinedList.ToArray();
+       
         _Curser = FindObjectOfType<Curser>();
 
         
 
-        _Turn();
+       // _Turn();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        allUnits = FindObjectsOfType<Units>().ToList();
+        Allmon = FindObjectsOfType<MON>().ToList();
 
+        var combinedList = allUnits.Cast<object>()
+                                   .Concat(Allmon)
+                                   .OrderByDescending(obj => (obj is Units unit) ? unit.ATB : ((MON)obj).ATB)
+                                   .Select(obj => (obj is Units unit) ? unit.gameObject : ((MON)obj).gameObject)
+                                   .ToList();
+        Alltrun = combinedList.ToArray();
+        playTrunATB();
         select();
-       
 
         if (Current_Trun >= Alltrun.Length)
         {
             Current_Trun = 0;
-            _Turn();
+          //  _Turn();
         }
-        
+     
+
+
 
 
 
     }
-    public void _Turn()
+   
+
+   /* public void _Turn()
     {
         GameObject _Alltrun = Alltrun[Current_Trun];
 
@@ -75,13 +79,63 @@ public class GameController : MonoBehaviour
         }
 
 
+    }*/
+
+    public void ATBPlus()
+    {
+        GameObject _Alltrun = Alltrun[Current_Trun];
+
+        Units currentUnit = _Alltrun.GetComponent<Units>();
+        MON currentMon = _Alltrun.GetComponent<MON>();
+
+        currentUnit.ATBpaly();
+        currentMon.ATBpaly();
+
+
     }
+
+    public void playTrunATB()
+    {
+        GameObject _Alltrun = Alltrun[0];
+
+        Units currentUnit = _Alltrun.GetComponent<Units>();
+        MON currentMon = _Alltrun.GetComponent<MON>();
+
+        if (currentUnit != null)
+        {
+            print("‡∑‘√Ïπ¢Õß: " + currentUnit.name);
+            currentUnit._IsPlay(true);
+        }
+        else if (currentMon != null)
+        {
+            print("‡∑‘√Ïπ¢Õß: " + currentMon.name);
+            currentMon._IsPlayMON(true);
+        }
+
+    }
+
 
     public void NextTurn()
     {
         Current_Trun = (Current_Trun + 1);
 
+        foreach (Units _allUnits in allUnits)
+        {
+            print("Units");
+            _allUnits.ATBpaly();
+
+        }
+
+        foreach (MON _ALLMon in Allmon)
+        {
+            print("_ALLMon");
+            _ALLMon.ATBpaly();
+
+        }
+
     }
+
+
 
 
     void select()

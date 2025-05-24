@@ -38,7 +38,7 @@ public class ATTACK : MonoBehaviour
     public void _OnENDDMG()
     {
 
-        OnAttack = true;
+        OnAttack = false;
         OnDMG = false;
         OnENDDMG = true;
         OnEND = false;
@@ -46,16 +46,20 @@ public class ATTACK : MonoBehaviour
 
     public void end_Step()
     {
-        
+       
         OnAttack = false;
         OnDMG = false;
         OnENDDMG = true;
         OnEND = true;
         _units._IsPlay(false);
+        _units.ATB = 0;
+
         _walk.Retrun();
+
+       
         Controller.NextTurn();
-        Controller._Turn();
-        
+       // Controller._Turn();
+
 
 
     }

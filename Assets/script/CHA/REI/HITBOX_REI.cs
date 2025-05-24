@@ -31,7 +31,7 @@ public class HITBOX_REI : MonoBehaviour
     {
        
         _MONNameATTACK(_gameController);
-        _MONSOLO = GameObject.Find(_MONName.name)?.GetComponent<MON>();
+        _MONSOLO = _MONName.GetComponent<MON>();
     }
     public void ATTACK_DMG(float GET_DMG)
     {
