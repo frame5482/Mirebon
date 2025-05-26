@@ -13,6 +13,12 @@ public class Textbase : MonoBehaviour
        
         public string speakerName;
         public Sprite speakerImage;
+        public Sprite SmallImage;
+
+        public Sprite BGImage;
+        public Sprite StoryImage;
+
+
 
         [TextArea(2, 5)]
         public string ENGsentence;
@@ -25,6 +31,16 @@ public class Textbase : MonoBehaviour
     }
     public Sprite Xeno;
     public Sprite REI;
+    public Sprite SmallXeno;
+    public Sprite SmallREI;
+
+
+    public Sprite BGImage_Emty;
+    public Sprite StoryImage_Emty;
+
+    public Sprite StoryImage_1;
+
+
 
     public List<DialogueData> TextData = new List<DialogueData>();
 
@@ -38,7 +54,11 @@ public class Textbase : MonoBehaviour
             Thaisentence = "ข้าไม่รู้ว่าเจ้าเป็นใคร... แต่เจ้ามีกลิ่นเลือดในเงา",
             Jpsentence = "青衣青衣",
           
-            speakerImage = Xeno
+            speakerImage = Xeno,
+            SmallImage  = SmallXeno,
+
+            BGImage = BGImage_Emty,
+            StoryImage = StoryImage_Emty
         });
         TextData.Add(new DialogueData
         {
@@ -47,7 +67,12 @@ public class Textbase : MonoBehaviour
             Thaisentence = "ข้าไม่รู้ว่าเจ้าเป็นใคร... แต่เจ้ามีกลิ่นเลือดในเงา",
             Jpsentence = "青衣",
 
-            speakerImage = Xeno
+            speakerImage = REI,
+            SmallImage = SmallREI,
+
+            BGImage = BGImage_Emty,
+            StoryImage = StoryImage_Emty
+
         }); 
         TextData.Add(new DialogueData
         {
@@ -56,7 +81,12 @@ public class Textbase : MonoBehaviour
             Thaisentence = "ข้าไม่รู้ว่าเจ้าเป็นใคร... แต่เจ้ามีกลิ่นเลือดในเงา",
             Jpsentence = "衣",
 
-            speakerImage = Xeno
+            speakerImage = Xeno,
+            SmallImage = SmallXeno,
+
+            BGImage = BGImage_Emty,
+            StoryImage = StoryImage_1
+
         });
 
     }
