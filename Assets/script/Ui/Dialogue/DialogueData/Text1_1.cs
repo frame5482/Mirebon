@@ -4,7 +4,7 @@ using UnityEngine;
 using static DialogueData;
 using UnityEngine.UI;
 
-public class Textbase : MonoBehaviour
+public class Text1_1 : MonoBehaviour
 { 
     
     [System.Serializable]
@@ -35,12 +35,14 @@ public class Textbase : MonoBehaviour
     public Sprite Smallemty;
     public Sprite[] SmallXeno;
     public Sprite[] SmallREI;
-
-
     public Sprite[] BGImage;
     public Sprite[] StoryImage;
 
-    
+
+    public Sprite[] Guardian;
+
+
+
 
 
 
@@ -51,13 +53,13 @@ public class Textbase : MonoBehaviour
     {
         TextData.Add(new DialogueData
         {
-            speakerName = "frame",
-            ENGsentence = "I don't know who you are... but the scent of blood lingers in your shadow.",
-            Thaisentence = "ข้าไม่รู้ว่าเจ้าเป็นใคร... แต่เจ้ามีกลิ่นเลือดในเงา",
-            Jpsentence = "青衣青衣",
+            speakerName = "REI",
+            ENGsentence = " ….. It seems this city can no longer hold on",
+            Thaisentence = " ….. ดูเหมือนเมืองนี้ จะไม่ไหวแล้ว",
+            Jpsentence = "….. この街はもう持ちこたえられないようだ。",
           
-            speakerImage = Xeno[0],
-            SmallImage  = SmallXeno[0],
+            speakerImage = REI[0],
+            SmallImage  = SmallREI[0],
 
             BGImage = BGImage[0], 
             StoryImage = StoryImage[0]
@@ -65,9 +67,9 @@ public class Textbase : MonoBehaviour
         TextData.Add(new DialogueData
         {
             speakerName = "dsadd",
-            ENGsentence = "I don't know who you are... but the scent of blood lingers in your shadow.",
-            Thaisentence = "ข้าไม่รู้ว่าเจ้าเป็นใคร... แต่เจ้ามีกลิ่นเลือดในเงา",
-            Jpsentence = "青衣",
+            ENGsentence = "Help!!!",
+            Thaisentence = " ช่วยด้วยยยย!",
+            Jpsentence = " 助けてくれ！",
 
             speakerImage = REI[0],
             SmallImage = SmallREI[0],
