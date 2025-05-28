@@ -6,6 +6,10 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+
+ 
+
+
     public TextMeshProUGUI speakerNameText;
     public TextMeshProUGUI JPdialogueText;
     public TextMeshProUGUI ENGdialogueText;
@@ -16,7 +20,11 @@ public class DialogueManager : MonoBehaviour
     public Image _BGImage;
     public Image _StoryImage;
 
-    public Textbase textbase; // อ้างอิงไปยัง Textbase (ลากจาก Inspector)
+
+
+    public Textbase textbase;
+
+ 
 
     public enum Language { ENG, THAI, JP }
     public Language currentLanguage = Language.THAI;
@@ -25,6 +33,14 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+        speakerNameText = GameObject.Find("Name")?.GetComponent<TextMeshProUGUI>();
+        JPdialogueText = GameObject.Find("Jp")?.GetComponent<TextMeshProUGUI>();
+        ENGdialogueText = GameObject.Find("ENG")?.GetComponent<TextMeshProUGUI>();
+        ThaidialogueText = GameObject.Find("TH")?.GetComponent<TextMeshProUGUI>();
+        characterImage = GameObject.Find("Cha")?.GetComponent<Image>();
+        characterImageSmall = GameObject.Find("EmtyCurrantTurn")?.GetComponent<Image>();
+        _BGImage = GameObject.Find("BG")?.GetComponent<Image>();
+        _StoryImage = GameObject.Find("Storypic")?.GetComponent<Image>();
 
         ShowCurrentLine();
     }

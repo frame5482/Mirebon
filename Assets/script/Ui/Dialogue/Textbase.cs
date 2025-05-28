@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static DialogueData;
 using UnityEngine.UI;
+using System;
 
 public class Textbase : MonoBehaviour
 { 
@@ -29,71 +30,10 @@ public class Textbase : MonoBehaviour
      
 
     }
-    public Sprite emty;
-    public Sprite[] Xeno;
-    public Sprite[] REI;
-    public Sprite Smallemty;
-    public Sprite[] SmallXeno;
-    public Sprite[] SmallREI;
-
-
-    public Sprite[] BGImage;
-    public Sprite[] StoryImage;
-
-    
-
-
+ 
 
     public List<DialogueData> TextData = new List<DialogueData>();
 
 
-    public void Start()
-    {
-        TextData.Add(new DialogueData
-        {
-            speakerName = "frame",
-            ENGsentence = "I don't know who you are... but the scent of blood lingers in your shadow.",
-            Thaisentence = "ข้าไม่รู้ว่าเจ้าเป็นใคร... แต่เจ้ามีกลิ่นเลือดในเงา",
-            Jpsentence = "青衣青衣",
-          
-            speakerImage = Xeno[0],
-            SmallImage  = SmallXeno[0],
-
-            BGImage = BGImage[0], 
-            StoryImage = StoryImage[0]
-        });
-        TextData.Add(new DialogueData
-        {
-            speakerName = "dsadd",
-            ENGsentence = "I don't know who you are... but the scent of blood lingers in your shadow.",
-            Thaisentence = "ข้าไม่รู้ว่าเจ้าเป็นใคร... แต่เจ้ามีกลิ่นเลือดในเงา",
-            Jpsentence = "青衣",
-
-            speakerImage = REI[0],
-            SmallImage = SmallREI[0],
-
-            BGImage = BGImage[0],
-            StoryImage = StoryImage[0]
-
-        }); 
-        TextData.Add(new DialogueData
-        {
-            speakerName = "swww",
-            ENGsentence = "I don't know who you are... but the scent of blood lingers in your shadow.",
-            Thaisentence = "ข้าไม่รู้ว่าเจ้าเป็นใคร... แต่เจ้ามีกลิ่นเลือดในเงา",
-            Jpsentence = "衣",
-
-            speakerImage = Xeno[0],
-            SmallImage = SmallXeno[0],
-
-            BGImage = BGImage[0],
-            StoryImage = StoryImage[1]
-        });
-
-    }
-    public void Update()
-    {
-        
-    }
-
+  
 }
