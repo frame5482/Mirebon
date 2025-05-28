@@ -3340,21 +3340,21 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.05
+  - time: 1
     functionName: _OnDMG
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.6
+  - time: 2.9
     functionName: _OnENDDMG
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 3.05
+  - time: 3.2
     functionName: end_Step
     data: 
     objectReferenceParameter: {fileID: 0}

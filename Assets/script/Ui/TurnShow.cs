@@ -15,6 +15,11 @@ public class TurnShow : MonoBehaviour
     public Sprite REI;
     public Sprite MONDOG;
 
+    public Image targetCurrntTurn;
+
+    public Sprite CurrntTurnXeno;
+    public Sprite CurrntTurnREI;
+
     public GameObject[] Alltrun;
 
     void Start()
@@ -30,7 +35,7 @@ public class TurnShow : MonoBehaviour
         ChangeImage(1);
         ChangeImage(2);
         ChangeImage(3);
-
+        CurrntTurn();
 
 
 
@@ -51,6 +56,21 @@ public class TurnShow : MonoBehaviour
         {
             targetImage[ImageNumber].sprite = MONDOG;
         }
+
+
+    }
+
+    public void CurrntTurn()
+    {
+        if (Alltrun[0].name == "Xeno")
+        {
+            targetCurrntTurn.sprite = CurrntTurnXeno;
+        }
+        else if (Alltrun[0].name == "REI")
+        {
+            targetCurrntTurn.sprite = CurrntTurnREI;
+        }
+      
 
 
     }
