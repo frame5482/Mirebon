@@ -20,6 +20,8 @@
 เนื่องจากผมไม่สามารถ Build APK ได้ผมจึงเลือก Build เป็น PC แทน และไม่ได้แก้ไขตั้งค่าอะไรมากทำเพียงแค่ตั้งค่ารูปปกเกม 
 
 
+![pic](https://github.com/frame5482/frame5482/blob/main/MirEbonPic)
+
 
 
 
