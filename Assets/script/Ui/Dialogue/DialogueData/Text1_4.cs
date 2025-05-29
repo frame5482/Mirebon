@@ -351,35 +351,7 @@ public class Text1_4 : Textbase
 
 
 
-        TextData.Add(new DialogueData
-        {
-            speakerName = "Rei",
-
-            Thaisentence = " ",
-            ENGsentence = " ",
-            Jpsentence = "  ",
-
-            speakerImage = REI[0],
-            SmallImage = SmallREI[0],
-
-            BGImage = BGImage[0],
-            StoryImage = StoryImage[0]
-        });
-
-        TextData.Add(new DialogueData
-        {
-            speakerName = "Xeno",
-
-            Thaisentence = " ",
-            ENGsentence = " ",
-            Jpsentence = " ",
-
-            speakerImage = Xeno[0],
-            SmallImage = SmallXeno[0],
-
-            BGImage = BGImage[0],
-            StoryImage = StoryImage[0]
-        });
+     
 
 
     }

@@ -21,6 +21,12 @@ public class GameController : MonoBehaviour
     public bool GMIsAttackOrBuff;
     public Curser _Curser;
 
+    public GameObject[] Selectplayer;
+    public GameObject[] SelectMon;
+
+
+    public bool _closeselect = false;
+
     void Start()
     {
        
@@ -34,6 +40,8 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         allUnits = FindObjectsOfType<Units>().ToList();
         Allmon = FindObjectsOfType<MON>().ToList();
 
@@ -45,11 +53,19 @@ public class GameController : MonoBehaviour
         Alltrun = combinedList.ToArray();
         playTrunATB();
         select();
-
+        Findselect();
         if (Current_Trun >= Alltrun.Length)
         {
             Current_Trun = 0;
           //  _Turn();
+        }
+        if (_closeselect == true)
+        {
+            closeselect();
+        }
+        else if (_closeselect == false)
+        {
+            ISBuffGM();
         }
      
 
@@ -59,6 +75,22 @@ public class GameController : MonoBehaviour
 
     }
    
+    public void Findselect()
+    {
+        
+        Transform[] allObjects = FindObjectsOfType<Transform>(true); 
+
+       
+        Selectplayer = allObjects
+            .Where(obj => obj.name.StartsWith("SelectPlayer"))
+            .Select(obj => obj.gameObject)
+            .ToArray();
+
+        SelectMon = allObjects
+            .Where(obj => obj.name.StartsWith("SelectMon"))
+            .Select(obj => obj.gameObject)
+            .ToArray();
+    }
 
    /* public void _Turn()
     {
@@ -105,13 +137,14 @@ public class GameController : MonoBehaviour
         {
             print("‡∑‘√Ïπ¢Õß: " + currentUnit.name);
             currentUnit._IsPlay(true);
+
         }
         else if (currentMon != null)
         {
             print("‡∑‘√Ïπ¢Õß: " + currentMon.name);
             currentMon._IsPlayMON(true);
         }
-
+     
     }
 
 
@@ -132,7 +165,7 @@ public class GameController : MonoBehaviour
             _ALLMon.ATBpaly();
 
         }
-
+      
     }
 
 
@@ -175,6 +208,23 @@ public class GameController : MonoBehaviour
             GMCurrent_select = allUnits[select_Index].transform;
             List_Length = allUnits.Count - 1;
             _Curser.SetNewTarget(allUnits[select_Index].transform);
+         
+
+            foreach (GameObject player in Selectplayer)
+            {
+                if (player != null)
+                {
+                    player.SetActive(true);
+                }
+            }
+            foreach (GameObject mon in SelectMon)
+            {
+                if (mon != null)
+                {
+                    mon.SetActive(false);
+                }
+            }
+
 
         }
         else if (GMIsAttackOrBuff == false)
@@ -183,8 +233,23 @@ public class GameController : MonoBehaviour
             GMCurrent_select = Allmon[select_Index].transform;
             List_Length = Allmon.Count - 1;
             _Curser.SetNewTarget(Allmon[select_Index].transform);
+            foreach (GameObject player in Selectplayer)
+            {
+                if (player != null)
+                {
+                    player.SetActive(false);
+                }
+            }
+            foreach (GameObject mon in SelectMon)
+            {
+                if (mon != null)
+                {
+                    mon.SetActive(true);
+                }
+            }
 
         }
+       
     }
    public void GmGetAttackOrBuff(bool GmGetAttackOrBuff)
     {
@@ -219,7 +284,28 @@ public class GameController : MonoBehaviour
 
     }
 
+    public void closeselect()
+    {
+        foreach (GameObject player in Selectplayer)
+        {
+            if (player != null)
+            {
+                player.SetActive(false);
+            }
+        }
+        foreach (GameObject mon in SelectMon)
+        {
+            if (mon != null)
+            {
+                mon.SetActive(false);
+            }
+        }
+    }
 
+    public void closeselectTrueOrfalse(bool __closeselect)
+    {
+        _closeselect = __closeselect;
+    }
 
 }
 

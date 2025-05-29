@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class Units : MonoBehaviour
 {
@@ -17,6 +17,7 @@ public class Units : MonoBehaviour
 
 
 
+    public float MaxHP = 2000;
 
     public float HP = 2000;
     public float ATK = 300;
@@ -63,6 +64,11 @@ public class Units : MonoBehaviour
     [SerializeField]
     Walk walk;
 
+    [SerializeField]
+    Transform HpbarPlayer;
+
+    private Vector3 initialScale;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,14 +81,23 @@ public class Units : MonoBehaviour
 
 
 
-
+        initialScale = HpbarPlayer.localScale;
 
     }
 
+    void Update_HPbar(float hp)
+    {
+        HP = Mathf.Clamp(hp, 0, MaxHP);
+        float ratio = HP / MaxHP;
 
+      
+        HpbarPlayer.localScale = new Vector3(initialScale.x * ratio, initialScale.y, initialScale.z);
+
+    }
     // Update is called once per frame
     void Update()
     {
+       
 
         if (IsPlay == true)
         {
@@ -116,9 +131,10 @@ public class Units : MonoBehaviour
 
 
 
-
         }
 
+
+        Update_HPbar(HP);
         if (HP == 0)
         {
             Destroy(gameObject);
@@ -142,6 +158,7 @@ public class Units : MonoBehaviour
                 isConfirmingQ = true;
                 isOrtherConfirming = true;
                 print("isConfirming");
+
             }
 
         }
@@ -154,6 +171,7 @@ public class Units : MonoBehaviour
                 if (Skill_Q_IS_BUFF == false) { walk.TakeAction(); }
                 playanime.SetTrigger("Skill_1");
                 cancer();
+                gameController.closeselect();
             }
         }
     }
@@ -183,6 +201,7 @@ public class Units : MonoBehaviour
                 if (Skill_W_IS_BUFF == false) { walk.TakeAction(); }
                 playanime.SetTrigger("Skill_2");
                 cancer();
+                gameController.closeselect();
             }
         }
     }
@@ -209,6 +228,7 @@ public class Units : MonoBehaviour
                 if (Skill_E_IS_BUFF == false) { walk.TakeAction(); }
                 playanime.SetTrigger("Skill_3");
                 cancer();
+                gameController.closeselect();
             }
 
         }
@@ -239,6 +259,7 @@ public class Units : MonoBehaviour
 
                 playanime.SetTrigger("EX");
                 cancer();
+                gameController.closeselect();
             }
         }
 

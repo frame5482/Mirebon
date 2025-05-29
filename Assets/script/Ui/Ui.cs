@@ -53,6 +53,7 @@ public class Ui : MonoBehaviour
         AttackClose.SetActive(false);
         _Curser.SetActive(true);
         print("AttackOpen");
+        _GameController.closeselectTrueOrfalse(false);
     }
     public void _AttackClose()
     {
@@ -61,6 +62,8 @@ public class Ui : MonoBehaviour
         _Curser.SetActive(false);
         _unit.cancer();
         print("_AttackClose");
+        _GameController.closeselectTrueOrfalse(true);
+
     }
 
 

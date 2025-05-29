@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class MON : MonoBehaviour
 {
-    public float HP = 2000;
+
+    public float MaxHP = 1000;
+    public float HP = 1000;
     public float ATK = 300;
     public float Defense = 60;
     public float LIFESTEAL = 5;
@@ -39,11 +41,23 @@ public class MON : MonoBehaviour
 
 
     public FlashOnHit flashOnHit;
+
+
+    [SerializeField]
+    Transform HpbarPlayer;
+
+
+    private Vector3 initialScale;
+
+
     // Start is called before the first frame update
     void Start()
     {
         gameController = FindObjectOfType<GameController>();
         units = FindObjectsOfType<Units>().ToList();
+
+        initialScale = HpbarPlayer.localScale;
+
     }
 
     // Update is called once per frame
@@ -56,11 +70,20 @@ public class MON : MonoBehaviour
 
         }
 
-
+        Update_HPbar(HP);
         if (HP == 0)
         {
             Destroy(gameObject);
         }
+    }
+    void Update_HPbar(float hp)
+    {
+        HP = Mathf.Clamp(hp, 0, MaxHP);
+        float ratio = HP / MaxHP;
+
+
+        HpbarPlayer.localScale = new Vector3(initialScale.x * ratio, initialScale.y, initialScale.z);
+
     }
     IEnumerator w8(int _W8 )
     {
