@@ -23,8 +23,7 @@ public class Text1_2 : Textbase
     public Sprite[] StoryImage;
 
 
-    public Sprite[] Guardian;
-    public Sprite[] smallGuardian;
+  
 
 
     public void Start()

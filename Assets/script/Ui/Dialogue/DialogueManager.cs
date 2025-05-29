@@ -22,6 +22,9 @@ public class DialogueManager : MonoBehaviour
     public Image _StoryImage;
 
 
+    public GameObject JPGameObject;
+    public GameObject ENGGameObject;
+    public GameObject ThaiGameObject;
 
     public Textbase textbase;
 
@@ -40,9 +43,11 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {   
         speakerNameText = GameObject.Find("Name")?.GetComponent<TextMeshProUGUI>();
-        JPdialogueText = GameObject.Find("Jp")?.GetComponent<TextMeshProUGUI>();
+
+        JPdialogueText = GameObject.Find("JP")?.GetComponent<TextMeshProUGUI>();
         ENGdialogueText = GameObject.Find("ENG")?.GetComponent<TextMeshProUGUI>();
         ThaidialogueText = GameObject.Find("TH")?.GetComponent<TextMeshProUGUI>();
+
         characterImage = GameObject.Find("Cha")?.GetComponent<Image>();
         characterImageSmall = GameObject.Find("EmtyCurrantTurn")?.GetComponent<Image>();
         _BGImage = GameObject.Find("BG")?.GetComponent<Image>();
@@ -53,10 +58,12 @@ public class DialogueManager : MonoBehaviour
 
     public void Update()
     {
+       
         ShowCurrentLine();
         Language_setting();
-
-
+        JPGameObject = JPdialogueText.gameObject;
+        ThaiGameObject = ThaidialogueText.gameObject;
+        ENGGameObject = ENGdialogueText.gameObject;
     }
     public void OnNextButtonPressed()
     {
@@ -88,25 +95,18 @@ public class DialogueManager : MonoBehaviour
         _BGImage.sprite = line.BGImage;
         _StoryImage.sprite = line.StoryImage;
 
-
-        if (currentLanguage == Language.JP)
-        {
             Debug.Log("Language.JP");
             JPdialogueText.text = line.Jpsentence;
-
-        }
-        else if (currentLanguage == Language.ENG)
-        {
+            
+       
             Debug.Log("Language.ENG");
             ENGdialogueText.text = line.ENGsentence;
-
-        }
-        else if (currentLanguage == Language.THAI)
-        {
+       
+       
             Debug.Log("Language.THAI");
             ThaidialogueText.text = line.Thaisentence;
 
-        }
+        
     }
 
     public void LoadScene() 
@@ -120,15 +120,26 @@ public class DialogueManager : MonoBehaviour
         SetintLanguage = PlayerPrefs.GetInt(SetLanguage);
         if (SetintLanguage == 0)
         {
-            currentLanguage = Language.THAI;
+            currentLanguage = Language.ENG;
+            ThaiGameObject.SetActive(false);
+            ENGGameObject.SetActive(true);
+            JPGameObject.SetActive(false);
+           
         }
         else if (SetintLanguage == 1)
         {
-            currentLanguage = Language.ENG;
+            currentLanguage = Language.THAI;
+            ThaiGameObject.SetActive(true);
+            ENGGameObject.SetActive(false);
+            JPGameObject.SetActive(false);
+
         }
         if (SetintLanguage == 2)
         {
             currentLanguage = Language.JP;
+            ThaiGameObject.SetActive(false);
+            ENGGameObject.SetActive(false);
+            JPGameObject.SetActive(true);
         }
 
     }

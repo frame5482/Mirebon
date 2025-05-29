@@ -50,7 +50,9 @@ public class MON : MonoBehaviour
 
     private Vector3 initialScale;
 
+    public bool IsWalk = true;
 
+    public GameObject Fireball;
 
     // Start is called before the first frame update
     void Start()
@@ -94,8 +96,14 @@ public class MON : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         Rendom();
-
-        _Walk.TakeAction();
+        if(IsWalk==true)
+        {
+            _Walk.TakeAction();
+        }
+       else if (IsWalk == false)
+        {
+            Instantiate(Fireball, transform.position, transform.rotation);
+        }
 
         yield return new WaitForSeconds(1);
         Attack();

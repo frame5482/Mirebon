@@ -219,7 +219,7 @@ MonoBehaviour:
   Weakness_Reveal: 10
   Weakness_DMG: 70
   ATB: 50
-  Speed: 100
+  Speed: 50
   IsPlay: 0
   alliance: []
   Enemy: []

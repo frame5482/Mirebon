@@ -12,6 +12,7 @@ public class Menu : MonoBehaviour
 
     public int intImage;
     public Sprite[] BGPIC;
+    public Sprite chapterBG;
 
 
 
@@ -21,7 +22,8 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Rendom();
+        BGImage.sprite = BGPIC[intImage];
     }
 
     // Update is called once per frame
@@ -40,17 +42,23 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(SceneMenu);
        
     }
+
+
+
+
     public void OpenStage()
     {
         Stage.SetActive(true);
         _Menu.SetActive(false);
+        BGImage.sprite = chapterBG;
 
     }
     public void OpenMenu()
     {
         Stage.SetActive(false);
         _Menu.SetActive(true);
-
+        Rendom();
+        BGImage.sprite = BGPIC[intImage];
     }
 
 

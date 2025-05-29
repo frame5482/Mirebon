@@ -215,7 +215,7 @@ MonoBehaviour:
   Crit_DMG: 50
   Weakness_Reveal: 10
   Exploit_DMG: 70
-  Speed: 20
+  Speed: 30
   MaxATB: 100
   ATB: 0
   IsPlay: 0

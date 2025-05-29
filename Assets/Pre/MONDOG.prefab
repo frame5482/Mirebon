@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a492a21e32a6c494a99ee396c1774da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myIndex: 0
   MaxHP: 1000
   HP: 2000
   ATK: 300
@@ -205,7 +206,7 @@ MonoBehaviour:
   Crit_DMG: 50
   Weakness_Reveal: 10
   Exploit_DMG: 70
-  Speed: 60
+  Speed: 40
   MaxATB: 100
   ATB: 50
   IsPlay: 0

@@ -33,11 +33,12 @@ public class TurnShow : MonoBehaviour
     void Update()
     {
         Alltrun = gameController.Alltrun;
+        CurrntTurn();
         ChangeImage(0);
         ChangeImage(1);
         ChangeImage(2);
         ChangeImage(3);
-        CurrntTurn();
+        
 
 
 
