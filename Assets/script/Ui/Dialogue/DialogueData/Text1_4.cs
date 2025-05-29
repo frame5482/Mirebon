@@ -52,7 +52,7 @@ public class Text1_4 : Textbase
             ENGsentence = " Of course, those ghosts and Phantom  and such, right?\r\n",
             Jpsentence = " もちろん、あの幽霊とか悪魔みたいなやつだろ？ ",
 
-            speakerImage = Xeno[0],
+            speakerImage = Xeno[4],
             SmallImage = SmallXeno[0],
 
             BGImage = BGImage[0],

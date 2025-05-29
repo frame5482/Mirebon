@@ -11,7 +11,7 @@ public class DMG_Xeno : MonoBehaviour
     public AudioClip[] REIaudioClips;
     public void Start_EX()
     {
-        _HITBOX_SENA.DMG = 1000;
+        _HITBOX_SENA.DMG = 500;
 
     }
     public void END_EX()
@@ -21,7 +21,7 @@ public class DMG_Xeno : MonoBehaviour
     }
     public void Start_Skill3()
     {
-        _HITBOX_SENA.DMG = 500;
+        _HITBOX_SENA.DMG = 200;
 
     }
     public void END_Skill3()

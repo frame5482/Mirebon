@@ -262,8 +262,8 @@ public class Text1_3 : Textbase
             ENGsentence = "Annoying! I just woke up, don’t bother me.",
             Jpsentence = "うるさい！今起きたばかりだ、邪魔しないでくれ。",
 
-            speakerImage = REI[0],
-            SmallImage = SmallREI[0],
+            speakerImage = Xeno[1],
+            SmallImage = SmallXeno[0],
             BGImage = BGImage[0],
             StoryImage = StoryImage[0]
         });
@@ -346,7 +346,7 @@ public class Text1_3 : Textbase
             Thaisentence = "เทพศาสตรา เซโน่….. จำเป็นต้องบอกนามที่สองด้วยรึไง?",
             ENGsentence = "Xeno the Sacred Armament... Do I really have to give my second name?",
             Jpsentence = "神器セノ……称号まで言う必要あるのか？",
-            speakerImage = Xeno[0],
+            speakerImage = Xeno[3],
 
             SmallImage = SmallXeno[0],
             BGImage = BGImage[0],
@@ -438,7 +438,7 @@ public class Text1_3 : Textbase
             Thaisentence = "หยุดเลย! เราไม่อยากจะรับฟังเศร้าๆ อะไรของเจ้าหรอกนะ บอกตามตรงว่าน่ารำคาญ",
             ENGsentence = "Stop! I don’t want to hear your sad stories. Honestly, it’s annoying.",
             Jpsentence = "やめろ！お前の暗い話なんて聞きたくない。正直うざい。",
-            speakerImage = Xeno[0],
+            speakerImage = Xeno[1],
             SmallImage = SmallXeno[0],
 
             BGImage = BGImage[0],
@@ -475,7 +475,7 @@ public class Text1_3 : Textbase
             Thaisentence = "เราเองก็อยากรู้เหมือนกัน",
             ENGsentence = "I want to know that too.",
             Jpsentence = "私も知りたいところだ。",
-            speakerImage = Xeno[0],
+            speakerImage = Xeno[3],
             SmallImage = SmallXeno[0],
 
             BGImage = BGImage[0],
@@ -770,7 +770,7 @@ public class Text1_3 : Textbase
             ENGsentence = " Alright, stretching my limbs after waking up isn’t so bad.\r\n",
             Jpsentence = " まあ、起きたばかりで体を伸ばすのも悪くないな。\r\n",
 
-            speakerImage = Xeno[0],
+            speakerImage = Xeno[4],
             SmallImage = SmallXeno[0],
 
             BGImage = BGImage[0],

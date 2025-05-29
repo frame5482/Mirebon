@@ -3550,6 +3550,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.3
+    functionName: Start_Skill3
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 1
     functionName: _OnDMG
     data: 
@@ -3559,6 +3566,13 @@ AnimationClip:
     messageOptions: 0
   - time: 2.15
     functionName: SoundAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.7
+    functionName: END_Skill3
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

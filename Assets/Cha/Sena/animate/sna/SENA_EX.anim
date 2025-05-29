@@ -6464,6 +6464,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 1.6
+    functionName: Start_EX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 6
     functionName: _OnDMG
     data: 
@@ -6473,6 +6480,13 @@ AnimationClip:
     messageOptions: 0
   - time: 6.6
     functionName: SoundEX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 7
+    functionName: END_EX
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -583,6 +583,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7505343746659554138, guid: bd466b09acbe49f4c944dfa1e83acc34, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3d40348fc27b044284c0e5e3a14e112, type: 3}
     - target: {fileID: 7642941564933775783, guid: bd466b09acbe49f4c944dfa1e83acc34, type: 3}
       propertyPath: m_Camera
       value: 
@@ -597,7 +601,7 @@ PrefabInstance:
       objectReference: {fileID: 466586152}
     - target: {fileID: 8298527864900006184, guid: bd466b09acbe49f4c944dfa1e83acc34, type: 3}
       propertyPath: SceneName
-      value: "\u0E3A\u0E3AB1-2"
+      value: B1_2
       objectReference: {fileID: 0}
     - target: {fileID: 8298527864900006184, guid: bd466b09acbe49f4c944dfa1e83acc34, type: 3}
       propertyPath: currentLanguage

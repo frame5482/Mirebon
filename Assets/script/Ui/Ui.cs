@@ -71,7 +71,7 @@ public class Ui : MonoBehaviour
             WinBGImage.sprite = BGPIC[intImage];
             Win.SetActive(true);
             Dead.SetActive(false);
-           Time.timeScale = 0;
+        
             
         }
         else if (iswin == false) 
@@ -80,7 +80,7 @@ public class Ui : MonoBehaviour
             loseBGImage.sprite = BGPIC[intImage];
             Dead.SetActive(true);
             Win.SetActive(false);
-            Time.timeScale = 0;
+            
 
         }
 

@@ -206,9 +206,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myIndex: 0
-  MaxHP: 1000
+  MaxHP: 1500
   HP: 2000
-  ATK: 300
+  ATK: 400
   Defense: 60
   LIFESTEAL: 5
   Crit_Rate: 10
@@ -228,6 +228,8 @@ MonoBehaviour:
   isActing: 0
   flashOnHit: {fileID: 3183242258395572723}
   HpbarPlayer: {fileID: 8980438061077999385}
+  IsWalk: 1
+  Fireball: {fileID: 0}
 --- !u!114 &5272913054300851778
 MonoBehaviour:
   m_ObjectHideFlags: 0

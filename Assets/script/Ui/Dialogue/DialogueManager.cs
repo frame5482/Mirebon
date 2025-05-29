@@ -76,8 +76,9 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("End of Dialogue");
             LoadScene();
+            Debug.Log("End of Dialogue");
+           
 
         }
     }
