@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class SounddSetting : MonoBehaviour
 {
     private static readonly string FirstPlay = "FirstPlay";
@@ -12,11 +13,13 @@ public class SounddSetting : MonoBehaviour
     private int firstPlayInt;
     public Slider backgroundslider, soundEffectsSlider;
 
-    private float backgroundFloat, soundEffectsFloat;
+    public float backgroundFloat, soundEffectsFloat;
     public AudioSource BackgroundAudio;
     public AudioSource[] SoundEffectsAudio;
 
-    public GameObject Setting;
+    public GameObject SettingO;
+    public GameObject SettingC;
+
 
     public enum Language { ENG, THAI, JP }
 
@@ -24,14 +27,13 @@ public class SounddSetting : MonoBehaviour
     public int SetintLanguage;
     public Language currentLanguage = Language.THAI;
 
-
+    public TMP_Dropdown dropdown;
 
 
     void Start()
     {
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
 
-        SetintLanguage = PlayerPrefs.GetInt(SetLanguage);
 
 
         if (firstPlayInt == 0)
@@ -55,10 +57,20 @@ public class SounddSetting : MonoBehaviour
         }
 
 
-      
+
     }
     public void Update()
     {
+
+        UpdateSound();
+
+        Language_setting();
+
+    }
+
+    public void Language_setting()
+        {
+        SetintLanguage = PlayerPrefs.GetInt(SetLanguage);
         if (SetintLanguage == 0)
         {
             currentLanguage = Language.THAI;
@@ -67,13 +79,25 @@ public class SounddSetting : MonoBehaviour
         {
             currentLanguage = Language.ENG;
         }
-        if (SetintLanguage == 0)
+        if (SetintLanguage == 2)
         {
             currentLanguage = Language.JP;
         }
 
     }
 
+
+    public void _dropdown()
+    {
+        int _DDropdown = dropdown.value;
+        
+       print(_DDropdown);
+
+        PlayerPrefs.SetInt(SetLanguage, _DDropdown);
+      
+
+
+    }
 
 
 
@@ -106,11 +130,12 @@ public class SounddSetting : MonoBehaviour
 
     public void Update_SettingOpen()
     {
-        Setting.SetActive(true);
-
+        SettingO.SetActive(true);
+        SettingC.SetActive(false);
     }
     public void Update_SettingExit()
     {
-        Setting.SetActive(false);
+        SettingC.SetActive(true);
+        SettingO.SetActive(false);
     }
 }

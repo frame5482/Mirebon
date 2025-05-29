@@ -60,13 +60,13 @@ public class GameController : MonoBehaviour
         if (allUnits.Count == 0)
         {
             print("_ui.IsWin(true);\r\n");
-            _ui.IsWin(true);
+            _ui.IsWin(false);
         }
 
         else if (Allmon.Count == 0)
         {
             print("_ui.IsWin(false);\r\n");
-            _ui.IsWin(false);
+            _ui.IsWin(true);
         }
         if (Current_Trun >= Alltrun.Length)
         {

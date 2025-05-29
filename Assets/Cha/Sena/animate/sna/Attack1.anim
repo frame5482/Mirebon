@@ -8423,6 +8423,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 2.4285715
+    functionName: SoundAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2.5714285
     functionName: _OnENDDMG
     data: 
@@ -8432,6 +8439,13 @@ AnimationClip:
     messageOptions: 0
   - time: 2.7142856
     functionName: _OnDMG
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.857143
+    functionName: SoundAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -8451,6 +8465,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 3.2857144
+    functionName: SoundAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 3.4285715
     functionName: _OnENDDMG
     data: 
@@ -8460,6 +8481,13 @@ AnimationClip:
     messageOptions: 0
   - time: 3.5714285
     functionName: _OnDMG
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 3.7142856
+    functionName: SoundAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

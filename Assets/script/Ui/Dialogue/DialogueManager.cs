@@ -25,8 +25,9 @@ public class DialogueManager : MonoBehaviour
 
     public Textbase textbase;
 
- 
 
+    private static readonly string SetLanguage = "PlayerPrefsSetLanguage";
+    public int SetintLanguage;
     public enum Language { ENG, THAI, JP }
     public Language currentLanguage = Language.THAI;
 
@@ -53,8 +54,9 @@ public class DialogueManager : MonoBehaviour
     public void Update()
     {
         ShowCurrentLine();
+        Language_setting();
 
-     
+
     }
     public void OnNextButtonPressed()
     {
@@ -110,6 +112,24 @@ public class DialogueManager : MonoBehaviour
     public void LoadScene() 
     {
         SceneManager.LoadScene(SceneName);
+
+    }
+
+    public void Language_setting()
+    {
+        SetintLanguage = PlayerPrefs.GetInt(SetLanguage);
+        if (SetintLanguage == 0)
+        {
+            currentLanguage = Language.THAI;
+        }
+        else if (SetintLanguage == 1)
+        {
+            currentLanguage = Language.ENG;
+        }
+        if (SetintLanguage == 2)
+        {
+            currentLanguage = Language.JP;
+        }
 
     }
 

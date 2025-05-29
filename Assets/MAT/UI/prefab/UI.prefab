@@ -168,8 +168,8 @@ MonoBehaviour:
   Xeno: {fileID: 21300000, guid: bd5f33aef3e01784c90dc70476bb8e55, type: 3}
   REI: {fileID: 21300000, guid: 62265479d043c414c9ed1bc610f28da2, type: 3}
   MONDOG: {fileID: 21300000, guid: c9851bb747ce2c642a281a83f70d2925, type: 3}
-  Book: {fileID: 0}
-  Dragon: {fileID: 0}
+  Book: {fileID: 21300000, guid: 646d34be9d151264599fcefe9d73877d, type: 3}
+  Dragon: {fileID: 21300000, guid: 64309a07af29a5c4dbdb2c31441e83a7, type: 3}
   targetCurrntTurn: {fileID: 765380610746474524}
   CurrntTurnXeno: {fileID: 21300000, guid: 75e9a6edb0ca1eb4c85b13f0d195c852, type: 3}
   CurrntTurnREI: {fileID: 21300000, guid: f9a2f5c6be2163042b6bde07de781c81, type: 3}
