@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     public GameObject[] Selectplayer;
     public GameObject[] SelectMon;
 
+    public Ui _ui;
 
     public bool _closeselect = false;
 
@@ -31,8 +32,8 @@ public class GameController : MonoBehaviour
     {
        
         _Curser = FindObjectOfType<Curser>();
+        _ui = FindObjectOfType<Ui>();
 
-        
 
        // _Turn();
     }
@@ -54,6 +55,19 @@ public class GameController : MonoBehaviour
         playTrunATB();
         select();
         Findselect();
+        SendIndex();
+
+        if (allUnits.Count == 0)
+        {
+            print("_ui.IsWin(true);\r\n");
+            _ui.IsWin(true);
+        }
+
+        else if (Allmon.Count == 0)
+        {
+            print("_ui.IsWin(false);\r\n");
+            _ui.IsWin(false);
+        }
         if (Current_Trun >= Alltrun.Length)
         {
             Current_Trun = 0;
@@ -67,11 +81,9 @@ public class GameController : MonoBehaviour
         {
             ISBuffGM();
         }
-     
 
 
-
-
+       
 
     }
    
@@ -257,7 +269,7 @@ public class GameController : MonoBehaviour
         return;
     }
 
-    public void Get_touchUnits(Transform Get_touchposition)
+    public void Get_touchUnits(Transform Get_touchposition ,int gettouch)
     {
         if (GMIsAttackOrBuff == true)
         {
@@ -265,12 +277,14 @@ public class GameController : MonoBehaviour
             print(" Get_touchposition ");
             GMCurrent_select = Get_touchposition;
             _Curser.SetNewTarget(GMCurrent_select.transform);
+            select_Index = gettouch;
+
         }
       
 
 
     }
-    public void Get_touchEnemy(Transform Get_touchposition)
+    public void Get_touchEnemy(Transform Get_touchposition, int gettouch)
     {
       
         if (GMIsAttackOrBuff == false)
@@ -279,6 +293,8 @@ public class GameController : MonoBehaviour
             print(" Get_touchposition ");
             GMCurrent_select = Get_touchposition;
             _Curser.SetNewTarget(GMCurrent_select.transform);
+            select_Index = gettouch;
+
         }
 
 
@@ -305,6 +321,24 @@ public class GameController : MonoBehaviour
     public void closeselectTrueOrfalse(bool __closeselect)
     {
         _closeselect = __closeselect;
+    }
+
+
+
+    public void SendIndex()
+    {
+        for (int i = 0; i < Allmon.Count; i++)
+        {
+            Allmon[i].myIndex = i;
+
+        }
+        for (int i = 0; i < allUnits.Count; i++)
+        {
+            allUnits[i].myIndex = i;
+
+        }
+     
+
     }
 
 }

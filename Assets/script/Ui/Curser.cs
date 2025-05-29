@@ -13,7 +13,7 @@ public class Curser : MonoBehaviour
     public float UpPosition = 2f ;
     private void Start()
     {
-        StartCoroutine(W8curcer());
+       
     }
     void Update()
     {
@@ -35,10 +35,6 @@ public class Curser : MonoBehaviour
         print("newTarget");
     }
 
-    IEnumerator W8curcer()
-    {
-      yield  return new WaitForSeconds(1);
-        gameObject.SetActive(false);
-    }
+
 
 }

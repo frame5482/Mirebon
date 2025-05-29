@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -31,8 +32,12 @@ public class DialogueManager : MonoBehaviour
 
     public int currentLineIndex = 0;
 
+
+    public string SceneName;
+
+
     void Start()
-    {
+    {   
         speakerNameText = GameObject.Find("Name")?.GetComponent<TextMeshProUGUI>();
         JPdialogueText = GameObject.Find("Jp")?.GetComponent<TextMeshProUGUI>();
         ENGdialogueText = GameObject.Find("ENG")?.GetComponent<TextMeshProUGUI>();
@@ -49,6 +54,7 @@ public class DialogueManager : MonoBehaviour
     {
         ShowCurrentLine();
 
+     
     }
     public void OnNextButtonPressed()
     {
@@ -62,7 +68,8 @@ public class DialogueManager : MonoBehaviour
         else
         {
             Debug.Log("End of Dialogue");
-          
+            LoadScene();
+
         }
     }
 
@@ -99,4 +106,11 @@ public class DialogueManager : MonoBehaviour
 
         }
     }
+
+    public void LoadScene() 
+    {
+        SceneManager.LoadScene(SceneName);
+
+    }
+
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MON : MonoBehaviour
 {
+    public int myIndex;
 
     public float MaxHP = 1000;
     public float HP = 1000;
@@ -48,6 +49,7 @@ public class MON : MonoBehaviour
 
 
     private Vector3 initialScale;
+
 
 
     // Start is called before the first frame update
@@ -133,7 +135,7 @@ public class MON : MonoBehaviour
     {
         print(" _touch " + transform);
 
-        gameController.Get_touchEnemy(transform);
+        gameController.Get_touchEnemy(transform, myIndex);
 
 
 

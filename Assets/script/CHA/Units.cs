@@ -15,6 +15,8 @@ public class Units : MonoBehaviour
     public Animator playanime;
 
 
+    public int myIndex;
+
 
 
     public float MaxHP = 2000;
@@ -158,7 +160,7 @@ public class Units : MonoBehaviour
                 isConfirmingQ = true;
                 isOrtherConfirming = true;
                 print("isConfirming");
-
+                _UII.OnUse_1();
             }
 
         }
@@ -172,6 +174,7 @@ public class Units : MonoBehaviour
                 playanime.SetTrigger("Skill_1");
                 cancer();
                 gameController.closeselect();
+                _UII.CloseOnuse();
             }
         }
     }
@@ -186,7 +189,7 @@ public class Units : MonoBehaviour
                 _IsBuff(Skill_W_IS_BUFF);
                 isConfirmingW = true;
                 isOrtherConfirming = true;
-
+                _UII.OnUse_2();
                 print("_IsBuff");
             }
         }
@@ -202,6 +205,7 @@ public class Units : MonoBehaviour
                 playanime.SetTrigger("Skill_2");
                 cancer();
                 gameController.closeselect();
+                _UII.CloseOnuse();
             }
         }
     }
@@ -215,7 +219,7 @@ public class Units : MonoBehaviour
                 _IsBuff(Skill_E_IS_BUFF);
                 isConfirmingE = true;
                 isOrtherConfirming = true;
-
+                _UII.OnUse_3();
                 print("isConfirmingW");
             }
 
@@ -229,6 +233,7 @@ public class Units : MonoBehaviour
                 playanime.SetTrigger("Skill_3");
                 cancer();
                 gameController.closeselect();
+                _UII.CloseOnuse();
             }
 
         }
@@ -245,7 +250,7 @@ public class Units : MonoBehaviour
                 _IsBuff(Skill_EX_IS_BUFF);
                 isConfirmingR = true;
                 isOrtherConfirming = true;
-
+                _UII.OnUse_4();
                 print("isConfirmingR");
             }
 
@@ -260,6 +265,7 @@ public class Units : MonoBehaviour
                 playanime.SetTrigger("EX");
                 cancer();
                 gameController.closeselect();
+                _UII.CloseOnuse();
             }
         }
 
@@ -280,7 +286,7 @@ public class Units : MonoBehaviour
     {
         print(" _touch " + transform);
 
-        gameController.Get_touchUnits(transform);
+        gameController.Get_touchUnits(transform , myIndex);
 
 
 
@@ -320,6 +326,7 @@ public class Units : MonoBehaviour
 
     {
         HP -= Damage;
+        playanime.SetTrigger("HIT");
     }
 
 }

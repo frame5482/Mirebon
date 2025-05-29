@@ -14,6 +14,8 @@ public class TurnShow : MonoBehaviour
     public Sprite Xeno;
     public Sprite REI;
     public Sprite MONDOG;
+    public Sprite Book;
+    public Sprite Dragon;
 
     public Image targetCurrntTurn;
 
@@ -56,7 +58,14 @@ public class TurnShow : MonoBehaviour
         {
             targetImage[ImageNumber].sprite = MONDOG;
         }
-
+        else if (Alltrun[ImageNumber].name == "Book")
+        {
+            targetImage[ImageNumber].sprite = Book;
+        }
+        else if (Alltrun[ImageNumber].name == "Dragon")
+        {
+            targetImage[ImageNumber].sprite = Dragon;
+        }
 
     }
 
