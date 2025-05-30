@@ -101,7 +101,7 @@ public class MON : MonoBehaviour
             _Walk.TakeAction();
         }
        else if (IsWalk == false)
-        {
+        {   
             Instantiate(Fireball, transform.position, transform.rotation);
         }
 

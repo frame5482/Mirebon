@@ -10,10 +10,10 @@ public class SounddSetting : MonoBehaviour
     private static readonly string SoundEffectsPref = "SoundEffectsPref";
 
 
-    private int firstPlayInt;
+    public int firstPlayInt;
     public Slider backgroundslider, soundEffectsSlider;
 
-    public float backgroundFloat, soundEffectsFloat;
+    private float backgroundFloat= 125f , soundEffectsFloat = 75f;
     public AudioSource BackgroundAudio;
     public AudioSource[] SoundEffectsAudio;
 
@@ -32,21 +32,20 @@ public class SounddSetting : MonoBehaviour
 
     void Start()
     {
+
+
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
-
-
-
         if (firstPlayInt == 0)
-        {
-            backgroundFloat = .125f; soundEffectsFloat = .75f;
-            backgroundslider.value = backgroundFloat;
-            soundEffectsSlider.value = soundEffectsFloat;
+          {
+              backgroundFloat = .125f; soundEffectsFloat = .75f;
+              backgroundslider.value = backgroundFloat;
+              soundEffectsSlider.value = soundEffectsFloat;
 
 
-            PlayerPrefs.SetFloat(BackgroundPref, backgroundFloat);
-            PlayerPrefs.SetFloat(SoundEffectsPref, soundEffectsFloat);
-            PlayerPrefs.SetInt(FirstPlay, -1);
-        }
+              PlayerPrefs.SetFloat(BackgroundPref, backgroundFloat);
+              PlayerPrefs.SetFloat(SoundEffectsPref, soundEffectsFloat);
+              PlayerPrefs.SetInt(FirstPlay, 1);
+          }
         else
         {
             backgroundFloat = PlayerPrefs.GetFloat(BackgroundPref);
@@ -57,7 +56,6 @@ public class SounddSetting : MonoBehaviour
         }
 
 
-
     }
     public void Update()
     {
@@ -65,6 +63,7 @@ public class SounddSetting : MonoBehaviour
         UpdateSound();
 
         Language_setting();
+        SaveSoundSettings();
 
     }
 

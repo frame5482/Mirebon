@@ -380,6 +380,10 @@ PrefabInstance:
       propertyPath: SettingO
       value: 
       objectReference: {fileID: 351499521}
+    - target: {fileID: 5048316396172524791, guid: 5e4d089a02ca3f046b0e855e37f04307, type: 3}
+      propertyPath: firstPlayInt
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7121641782445545680, guid: 5e4d089a02ca3f046b0e855e37f04307, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
