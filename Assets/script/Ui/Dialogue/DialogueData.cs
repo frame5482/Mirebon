@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "New Dialogue", menuName = "Dialogue/Advanced Dialogue")]
+
 public class DialogueData : ScriptableObject
 {
     [System.Serializable]
