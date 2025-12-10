@@ -360,6 +360,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start
       objectReference: {fileID: 0}
+    - target: {fileID: 3033766949424504922, guid: 5e4d089a02ca3f046b0e855e37f04307, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3676874403507497590, guid: 5e4d089a02ca3f046b0e855e37f04307, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -399,6 +403,10 @@ PrefabInstance:
     - target: {fileID: 7142017214406232570, guid: 5e4d089a02ca3f046b0e855e37f04307, type: 3}
       propertyPath: SceneMenu
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142017214406232570, guid: 5e4d089a02ca3f046b0e855e37f04307, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7573763172259676494, guid: 5e4d089a02ca3f046b0e855e37f04307, type: 3}
       propertyPath: m_IsActive

@@ -61,7 +61,6 @@ public class SounddSetting : MonoBehaviour
     {
 
         UpdateSound();
-
         Language_setting();
         SaveSoundSettings();
 
