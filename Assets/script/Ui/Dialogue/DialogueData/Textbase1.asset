@@ -20,15 +20,15 @@ MonoBehaviour:
     speakerImage: {fileID: 21300000, guid: 5df4694d4f3b7c140b24283d48e92ad5, type: 3}
     SmallImage: {fileID: 21300000, guid: 75e9a6edb0ca1eb4c85b13f0d195c852, type: 3}
     BGImage: {fileID: 21300000, guid: 242734e34900779419cd330c69522c9f, type: 3}
-    StoryImage: {fileID: 21300000, guid: 167f9f42e873e1a4185df3830ed5b018, type: 3}
+    StoryImage: {fileID: 0}
   - speakerName: dsss
     Jpsentence: 545
     ENGsentence: dddd
     Thaisentence: "\u0E2B\u0E01\u0E1F\u0E01\u0E1F"
-    speakerImage: {fileID: 21300000, guid: 5df4694d4f3b7c140b24283d48e92ad5, type: 3}
+    speakerImage: {fileID: 21300000, guid: 26316f2f06189064c977285b83d52358, type: 3}
     SmallImage: {fileID: 21300000, guid: 75e9a6edb0ca1eb4c85b13f0d195c852, type: 3}
     BGImage: {fileID: 21300000, guid: 242734e34900779419cd330c69522c9f, type: 3}
-    StoryImage: {fileID: 21300000, guid: 167f9f42e873e1a4185df3830ed5b018, type: 3}
+    StoryImage: {fileID: 0}
   - speakerName: dsdd
     Jpsentence: 545
     ENGsentence: dddd
@@ -36,4 +36,4 @@ MonoBehaviour:
     speakerImage: {fileID: 21300000, guid: 5df4694d4f3b7c140b24283d48e92ad5, type: 3}
     SmallImage: {fileID: 21300000, guid: 75e9a6edb0ca1eb4c85b13f0d195c852, type: 3}
     BGImage: {fileID: 21300000, guid: 242734e34900779419cd330c69522c9f, type: 3}
-    StoryImage: {fileID: 21300000, guid: 167f9f42e873e1a4185df3830ed5b018, type: 3}
+    StoryImage: {fileID: 0}
